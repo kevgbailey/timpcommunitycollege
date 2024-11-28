@@ -30,17 +30,10 @@ def generate_student(first_names, last_names, majors):
 	return Student(first_name, last_name, year, major)
 
 def main():
-	fn = open("data/first-names.txt")
-	ln = open("data/last-names.txt")
-	mj = open("data/majors.txt")
-
-	first_names = [name.strip() for name in fn.readlines()]
-	last_names = [name.strip() for name in ln.readlines()]
-	majors = [major.strip() for major in mj.readlines()]
-
-	mj.close()
-	ln.close()
-	fn.close()
+	with open("data/first-names.txt") as fn, open("data/last-names.txt") as ln, open("data/majors.txt") as mj:
+		first_names = [name.strip() for name in fn.readlines()]
+		last_names = [name.strip() for name in ln.readlines()]
+		majors = [major.strip() for major in mj.readlines()]
 
 
 	query = "INSERT INTO students (FirstName, LastName, Year, Major) VALUES\n\t"
@@ -52,9 +45,9 @@ def main():
 
 	query += ';'
 	
-	out_file = open("output/students.sql", "w")
-	out_file.write(query)
-	out_file.close()
+	with open("output/students.sql", "w") as out_file:
+		out_file.write(query)
+
 
 if __name__ == "__main__":
 	main()
