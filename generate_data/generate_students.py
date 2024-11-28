@@ -1,6 +1,8 @@
 import random
 from dataclasses import dataclass
 
+STUDENT_COUNT = 10000
+
 @dataclass
 class Student:
 	first_name: str
@@ -16,16 +18,12 @@ class Student:
 		return f"(\'{escaped_first_name}\', \'{escaped_last_name}\', {self.year}, \'{self.major}\')"
 
 def generate_student(first_names, last_names, majors):
-	fn_idx = random.randint(0, len(first_names) - 1)
-	first_name = first_names[fn_idx]
-
-	ln_idx = random.randint(0, len(last_names) - 1)
-	last_name = last_names[ln_idx]
+	first_name = random.choice(first_names)
+	last_name = random.choice(last_names)
 
 	year = random.randint(1, 4)
 
-	mj_idx = random.randint(0, len(majors) - 1)
-	major = majors[mj_idx]
+	major = random.choice(majors)
 
 	return Student(first_name, last_name, year, major)
 
@@ -37,7 +35,7 @@ def main():
 
 
 	query = "INSERT INTO students (FirstName, LastName, Year, Major) VALUES\n\t"
-	for i in range(10000):
+	for i in range(STUDENT_COUNT):
 		if i != 0:
 			query += ",\n\t"
 		stu = generate_student(first_names, last_names, majors)
