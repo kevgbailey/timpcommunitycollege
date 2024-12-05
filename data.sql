@@ -123,11 +123,18 @@ VALUES
 ('Quinn', 'Sanders', 'Engineering'),
 ('Rebecca', 'Coleman', 'Engineering'),
 ('Steven', 'Morris', 'Engineering'),
-('Tina', 'Porter', 'Engineering');
+('Tina', 'Porter', 'Engineering'),
+('Ulysses', 'King', 'Math'), -- FacultyID 21
+('Violet', 'Clark', 'Computer Science'), FacultyID 22
+('Walter', 'Adams', 'Biology'), FacultyID 23
+('Xavier', 'Garcia', 'Physics'), FacultyID 24
+('Yvonne', 'Roberts', 'Chemistry'), FacultyID 25
+('Zachary', 'Taylor', 'History'), FacultyID 26
+('Amy', 'Nelson', 'English'), FacultyID 27
+('Brian', 'Owens', 'Engineering'); FacultyID 28
 
 
-INSERT INTO Courses (CourseName, TeacherID) 
-VALUES
+INSERT INTO Courses (CourseName, TeacherID) VALUES
 ('Calculus I', 1),
 ('Linear Algebra', 1),
 ('Differential Equations', 2),
@@ -1077,6 +1084,110 @@ VALUES
 (99, TRUE, 'CDE696'),
 (100, FALSE, 'GHI797');
 
+INSERT INTO Advisors(FacultyID, StudentID)
+VALUES
+    (21, 1),  
+    (22, 2),  
+    (23, 3),  
+    (24, 4),  
+    (25, 5),  
+    (26, 6),  
+    (24, 7),  
+    (27, 8),  
+    (28, 9),  
+    (21, 10), 
+    (22, 11), 
+    (23, 12), 
+    (24, 13), 
+    (25, 14), 
+    (26, 15), 
+    (24, 16), 
+    (27, 17), 
+    (28, 18), 
+    (21, 19), 
+    (22, 20), 
+    (23, 21), 
+    (24, 22), 
+    (25, 23), 
+    (26, 24), 
+    (24, 25), 
+    (27, 26), 
+    (28, 27), 
+    (21, 28), 
+    (22, 29), 
+    (23, 30), 
+    (24, 31), 
+    (25, 32), 
+    (26, 33), 
+    (24, 34), 
+    (27, 35), 
+    (28, 36), 
+    (21, 37), 
+    (22, 38), 
+    (23, 39), 
+    (24, 40), 
+    (25, 41), 
+    (26, 42), 
+    (24, 43), 
+    (27, 44), 
+    (28, 45), 
+    (21, 46), 
+    (22, 47), 
+    (23, 48), 
+    (24, 49), 
+    (25, 50), 
+    (26, 51), 
+    (24, 52), 
+    (27, 53), 
+    (28, 54), 
+    (21, 55), 
+    (22, 56), 
+    (23, 57), 
+    (24, 58), 
+    (25, 59), 
+    (26, 60), 
+    (24, 61), 
+    (27, 62), 
+    (28, 63), 
+    (21, 64), 
+    (22, 65), 
+    (23, 66), 
+    (24, 67), 
+    (25, 68), 
+    (26, 69), 
+    (24, 70), 
+    (27, 71), 
+    (28, 72), 
+    (21, 73), 
+    (22, 74), 
+    (23, 75), 
+    (24, 76), 
+    (25, 77), 
+    (26, 78), 
+    (24, 79), 
+    (27, 80), 
+    (28, 81), 
+    (21, 82), 
+    (22, 83), 
+    (23, 84), 
+    (24, 85), 
+    (25, 86), 
+    (26, 87), 
+    (24, 88), 
+    (27, 89), 
+    (28, 90), 
+    (21, 91), 
+    (22, 92), 
+    (23, 93), 
+    (24, 94), 
+    (25, 95), 
+    (26, 96), 
+    (27, 97), 
+    (28, 98), 
+    (24, 99), 
+    (21, 100); 
+
+
 
 INSERT INTO Attendance (StudentID, CourseID, AttendanceDate, Status) 
 VALUES
@@ -1481,8 +1592,7 @@ VALUES
 (100, 1, '2023-08-18', 'Present');
 
 
-INSERT INTO Scholarships (ScholarshipName, Amount, StudentID) 
-VALUES
+INSERT INTO Scholarships (ScholarshipName, Amount, StudentID) VALUES
 ('Academic Excellence Scholarship', 1500.00, 12),
 ('Sports Achievement Scholarship', 1200.00, 35),
 ('Leadership Scholarship', 1000.00, 72),
@@ -1495,8 +1605,7 @@ VALUES
 ('Environmental Studies Scholarship', 900.00, 19);
 
 
-INSERT INTO Clubs (ClubName, Description) 
-VALUES
+INSERT INTO Clubs (ClubName, Description) VALUES
 ('Fifa Club', 'A club for students passionate about FIFA gaming and tournaments.'),
 ('Coding Club', 'A group for students interested in coding, programming, and development.'),
 ('Pickleball Club', 'Join us for pickleball matches, fun competitions, and social events.'),
@@ -1533,8 +1642,7 @@ VALUES
 ('Ready Player One', 'Ernest Cline', '9780307887436', 2011, 5);
 
 
-INSERT INTO BorrowedBooks (BookID, StudentID, BorrowedAt, DueDate, ReturnedAt) 
-VALUES
+INSERT INTO BorrowedBooks (BookID, StudentID, BorrowedAt, DueDate, ReturnedAt) VALUES
 (21, 32, '2023-08-15 10:30:00', '2023-08-22', '2023-08-21'),
 (22, 45, '2023-08-17 09:45:00', '2023-08-24', NULL),
 (23, 12, '2023-08-20 14:00:00', '2023-08-27', '2023-08-26'),
